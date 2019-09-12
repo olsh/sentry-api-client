@@ -7,7 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SentryApi.Client", "SentryA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SentryApi.Client.IntegrationTests", "SentryApi.Client.IntegrationTests\SentryApi.Client.IntegrationTests.csproj", "{73714617-CCD0-47CA-9D15-F4B0C4A7BA92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SentryApi.Client.UnitTests", "SentryApi.Client.UnitTests\SentryApi.Client.UnitTests.csproj", "{1F8F9ABA-98E0-47DF-B8B6-CAD371E65E09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SentryApi.Client.UnitTests", "SentryApi.Client.UnitTests\SentryApi.Client.UnitTests.csproj", "{1F8F9ABA-98E0-47DF-B8B6-CAD371E65E09}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{484D3037-FB94-49F0-9E21-40AC98425809}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\ci.yml = ..\.github\workflows\ci.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

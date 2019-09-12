@@ -6,7 +6,7 @@ namespace SentryApi.Client.IntegrationTests.Helpers
     {
         public static SentryApiClient Create()
         {
-            var token = Environment.GetEnvironmentVariable("sentry:token");
+            var token = Environment.GetEnvironmentVariable("sentry-token");
 
             return new SentryApiClient(token);
         }

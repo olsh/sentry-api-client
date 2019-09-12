@@ -13,7 +13,10 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 2.2.108
-    - name: Build with dotnet
+    - name: Build and test with dotnet
+      env:
+        sentry-token: ${{ secrets.sentry_token }}
       run: |
-        dotnet build --configuration Release
-        dotnet test --configuration Release
+        dotnet build src/SentryApi.Client.sln --configuration Release
+        dotnet build src/SentryApi.Client.UnitTests/SentryApi.Client.UnitTests.csproj --configuration Release
+        dotnet build src/SentryApi.Client.IntegrationTests/SentryApi.Client.IntegrationTests.csproj --configuration Release
