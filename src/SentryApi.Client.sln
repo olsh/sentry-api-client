@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SentryApi.Client", "SentryApi.Client\SentryApi.Client.csproj", "{FDBC6CAE-1E3B-4A50-8B6D-069E1529DD42}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SentryApi.Client.IntegrationTests", "SentryApi.Client.IntegrationTests\SentryApi.Client.IntegrationTests.csproj", "{73714617-CCD0-47CA-9D15-F4B0C4A7BA92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SentryApi.Client.UnitTests", "SentryApi.Client.UnitTests\SentryApi.Client.UnitTests.csproj", "{1F8F9ABA-98E0-47DF-B8B6-CAD371E65E09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDBC6CAE-1E3B-4A50-8B6D-069E1529DD42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDBC6CAE-1E3B-4A50-8B6D-069E1529DD42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDBC6CAE-1E3B-4A50-8B6D-069E1529DD42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDBC6CAE-1E3B-4A50-8B6D-069E1529DD42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73714617-CCD0-47CA-9D15-F4B0C4A7BA92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73714617-CCD0-47CA-9D15-F4B0C4A7BA92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73714617-CCD0-47CA-9D15-F4B0C4A7BA92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73714617-CCD0-47CA-9D15-F4B0C4A7BA92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F8F9ABA-98E0-47DF-B8B6-CAD371E65E09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F8F9ABA-98E0-47DF-B8B6-CAD371E65E09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F8F9ABA-98E0-47DF-B8B6-CAD371E65E09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F8F9ABA-98E0-47DF-B8B6-CAD371E65E09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F225795E-9C79-40E6-B538-33C93A8A1C40}
+	EndGlobalSection
+EndGlobal
