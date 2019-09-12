@@ -18,5 +18,5 @@ jobs:
         sentry-token: ${{ secrets.sentry_token }}
       run: |
         dotnet build src/SentryApi.Client.sln --configuration Release
-        dotnet build src/SentryApi.Client.UnitTests/SentryApi.Client.UnitTests.csproj --configuration Release
-        dotnet build src/SentryApi.Client.IntegrationTests/SentryApi.Client.IntegrationTests.csproj --configuration Release
+        dotnet test src/SentryApi.Client.UnitTests/SentryApi.Client.UnitTests.csproj --configuration Release
+        dotnet test src/SentryApi.Client.IntegrationTests/SentryApi.Client.IntegrationTests.csproj --configuration Release
