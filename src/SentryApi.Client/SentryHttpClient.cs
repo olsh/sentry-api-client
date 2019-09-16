@@ -25,12 +25,11 @@ namespace SentryApi.Client
             _httpClient.Dispose();
         }
 
-        public async Task<HttpResponseMessage> SendAsync(HttpMethod method, string resource)
+        public async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request)
         {
-            var responseMessage = await _httpClient.SendAsync(
-                                          new HttpRequestMessage(method, resource),
-                                          HttpCompletionOption.ResponseContentRead)
+            var responseMessage = await _httpClient.SendAsync(request, HttpCompletionOption.ResponseContentRead)
                                       .ConfigureAwait(false);
+            responseMessage.EnsureSuccessStatusCode();
 
             return responseMessage;
         }

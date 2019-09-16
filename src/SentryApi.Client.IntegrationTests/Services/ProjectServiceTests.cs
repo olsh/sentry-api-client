@@ -13,9 +13,9 @@ namespace SentryApi.Client.IntegrationTests.Services
         {
             var client = SentryApiClientFactory.Create();
 
-            var projects = await client.Projects.GetAsync();
+            var pagedCollection = await client.Projects.GetAsync();
 
-            Assert.NotEmpty(projects);
+            Assert.NotEmpty(pagedCollection.Collection);
         }
     }
 }

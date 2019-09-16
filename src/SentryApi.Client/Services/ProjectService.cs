@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Net.Http;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace SentryApi.Client
 {
@@ -13,9 +11,9 @@ namespace SentryApi.Client
             _sentryApiClient = sentryApiClient;
         }
 
-        public Task<IReadOnlyCollection<Project>> GetAsync()
+        public Task<PagedCollection<Project>> GetAsync()
         {
-            return _sentryApiClient.ExecuteAsync<IReadOnlyCollection<Project>>(HttpMethod.Get, "projects/");
+            return _sentryApiClient.GetPagedAsync<Project>("projects/");
         }
     }
 }

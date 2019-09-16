@@ -8,6 +8,6 @@ namespace SentryApi.Client
         public string AvatarType { get; set; }
 
         [JsonProperty("avatarUuid")]
-        public object AvatarUuid { get; set; }
+        public string AvatarUuid { get; set; }
     }
 }

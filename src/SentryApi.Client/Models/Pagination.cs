@@ -9,7 +9,7 @@ namespace SentryApi.Client
             "<(?<url>[^>]+)>;\\s*rel=\"(?<rel>[^\"]+)\";\\s*results=\"(?<results>[^\"]+)\"",
             RegexOptions.Compiled);
 
-        internal Pagination()
+        private Pagination()
         {
         }
 
@@ -21,11 +21,11 @@ namespace SentryApi.Client
 
         internal Uri PreviousLink { get; private set; }
 
-        internal static bool TryParse(string input, out Pagination pagination)
+        internal static bool TryParse(string linkHeader, out Pagination pagination)
         {
             pagination = new Pagination();
 
-            var parts = input.Split(',');
+            var parts = linkHeader.Split(',');
             if (parts.Length != 2)
             {
                 return false;
