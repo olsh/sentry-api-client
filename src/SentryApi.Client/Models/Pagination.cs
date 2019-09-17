@@ -13,9 +13,9 @@ namespace SentryApi.Client
         {
         }
 
-        internal bool HasNext { get; private set; }
+        public bool HasNext { get; private set; }
 
-        internal bool HasPrevious { get; private set; }
+        public bool HasPrevious { get; private set; }
 
         internal Uri NextLink { get; private set; }
 

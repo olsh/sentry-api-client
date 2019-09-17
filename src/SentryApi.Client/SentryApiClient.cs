@@ -14,6 +14,11 @@ namespace SentryApi.Client
 
         public SentryApiClient(string token)
         {
+            if (string.IsNullOrEmpty(token))
+            {
+                throw new ArgumentException("Value cannot be null or empty.", nameof(token));
+            }
+
             _sentryHttpClient = new SentryHttpClient(token);
 
             Projects = new ProjectService(this);

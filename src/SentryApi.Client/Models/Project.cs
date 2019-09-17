@@ -18,35 +18,29 @@ namespace SentryApi.Client
         [JsonProperty("features")]
         public string[] Features { get; set; }
 
-        [JsonProperty("firstEvent")]
-        public object FirstEvent { get; set; }
-
         [JsonProperty("hasAccess")]
-        public bool HasAccess { get; set; }
+        public bool? HasAccess { get; set; }
 
         [JsonProperty("id")]
         public string Id { get; set; }
 
         [JsonProperty("isBookmarked")]
-        public bool IsBookmarked { get; set; }
+        public bool? IsBookmarked { get; set; }
 
         [JsonProperty("isInternal")]
-        public bool IsInternal { get; set; }
+        public bool? IsInternal { get; set; }
 
         [JsonProperty("isMember")]
-        public bool IsMember { get; set; }
+        public bool? IsMember { get; set; }
 
         [JsonProperty("isPublic")]
-        public bool IsPublic { get; set; }
+        public bool? IsPublic { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
 
         [JsonProperty("organization")]
         public Organization Organization { get; set; }
-
-        [JsonProperty("platform")]
-        public object Platform { get; set; }
 
         [JsonProperty("slug")]
         public string Slug { get; set; }

@@ -1,0 +1,23 @@
+name: Deploy to NuGet
+
+on: 
+  release:
+    types: created
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 2.2.108
+    - name: Pack and publish with dotnet
+      env:
+        sentry-token: ${{ secrets.sentry_token }}
+      run: |
+        dotnet pack src/SentryApi.Client/SentryApi.Client.csproj --configuration Release -p:PackageVersion=${GITHUB_REF}
+        dotnet nuget push **/*.nupkg -k ${{ secrets.nuget_api_key }}
