@@ -1,4 +1,4 @@
-name: Deploy to NuGet
+name: Publish
 
 on: 
   release:
@@ -19,5 +19,5 @@ jobs:
       env:
         sentry-token: ${{ secrets.sentry_token }}
       run: |
-        dotnet pack src/SentryApi.Client/SentryApi.Client.csproj --configuration Release -p:PackageVersion=${GITHUB_REF}
+        dotnet pack src/SentryApi.Client/SentryApi.Client.csproj --configuration Release -p:Version=${GITHUB_REF}
         dotnet nuget push **/*.nupkg -k ${{ secrets.nuget_api_key }}

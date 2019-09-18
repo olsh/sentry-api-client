@@ -1,6 +1,6 @@
 # Sentry API client
 
-![](https://github.com/olsh/sentry-api-client/workflows/ci/badge.svg)
+![](https://github.com/olsh/sentry-api-client/workflows/CI/badge.svg)
 
 
 This is a library for [Sentry web API](https://docs.sentry.io/api/), 

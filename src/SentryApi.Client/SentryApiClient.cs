@@ -22,9 +22,12 @@ namespace SentryApi.Client
             _sentryHttpClient = new SentryHttpClient(token);
 
             Projects = new ProjectService(this);
+            Events = new EventService(this);
         }
 
         public IProjectService Projects { get; }
+
+        public IEventService Events { get; }
 
         public void Dispose()
         {

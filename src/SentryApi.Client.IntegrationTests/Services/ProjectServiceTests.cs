@@ -35,7 +35,7 @@ namespace SentryApi.Client.IntegrationTests.Services
             var pagedCollection = await client.Projects.GetAsync();
             var firstProject = pagedCollection.Collection.First();
 
-            var project = await client.Projects.GetAsync(firstProject.Organization.Slug, firstProject.Slug);
+            var project = await client.Projects.GetAsync(new SentryRequest(firstProject.Organization.Slug, firstProject.Slug));
 
             Assert.NotNull(project);
         }

@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace SentryApi.Client
 {
-    public class ProjectService : IProjectService
+    internal class ProjectService : IProjectService
     {
         private readonly IAdvancedSentryApiClient _sentryApiClient;
 
@@ -17,19 +17,14 @@ namespace SentryApi.Client
             return _sentryApiClient.GetPagedAsync<Project>("projects/");
         }
 
-        public Task<Project> GetAsync(string organizationSlug, string projectSlug)
+        public Task<Project> GetAsync(SentryRequest request)
         {
-            if (string.IsNullOrEmpty(organizationSlug))
+            if (request == null)
             {
-                throw new ArgumentException("Value cannot be null or empty.", nameof(organizationSlug));
+                throw new ArgumentNullException(nameof(request));
             }
 
-            if (string.IsNullOrEmpty(projectSlug))
-            {
-                throw new ArgumentException("Value cannot be null or empty.", nameof(projectSlug));
-            }
-
-            return _sentryApiClient.GetAsync<Project>($"projects/{organizationSlug}/{projectSlug}/");
+            return _sentryApiClient.GetAsync<Project>($"projects/{request.OrganizationSlug}/{request.ProjectSlug}/");
         }
     }
 }

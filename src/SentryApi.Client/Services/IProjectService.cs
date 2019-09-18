@@ -6,6 +6,6 @@ namespace SentryApi.Client
     {
         Task<PagedCollection<Project>> GetAsync();
 
-        Task<Project> GetAsync(string organizationSlug, string projectSlug);
+        Task<Project> GetAsync(SentryRequest request);
     }
 }
