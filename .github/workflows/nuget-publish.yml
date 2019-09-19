@@ -20,4 +20,4 @@ jobs:
         sentry-token: ${{ secrets.sentry_token }}
       run: |
         dotnet pack src/SentryApi.Client/SentryApi.Client.csproj --configuration Release
-        dotnet nuget push **/*.nupkg -k ${{ secrets.nuget_api_key }}
+        dotnet nuget push **/*.nupkg -k ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json
