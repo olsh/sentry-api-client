@@ -7,7 +7,7 @@
 
     <Version>0.0.1</Version>
     
-    <PackageId>SentryApi.Client</PackageId>
+    <PackageId>Io.Sentry.Client</PackageId>
     <PackageTags>sentry</PackageTags>
     <PackageReleaseNotes>https://github.com/olsh/sentry-api-client/releases</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/olsh/sentry-api-client</PackageProjectUrl>
