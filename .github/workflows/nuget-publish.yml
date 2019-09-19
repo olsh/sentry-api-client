@@ -19,5 +19,5 @@ jobs:
       env:
         sentry-token: ${{ secrets.sentry_token }}
       run: |
-        dotnet pack src/SentryApi.Client/SentryApi.Client.csproj --configuration Release -p:Version=${GITHUB_REF}
+        dotnet pack src/SentryApi.Client/SentryApi.Client.csproj --configuration Release -p:Version=${{ github.ref }}
         dotnet nuget push **/*.nupkg -k ${{ secrets.nuget_api_key }}
