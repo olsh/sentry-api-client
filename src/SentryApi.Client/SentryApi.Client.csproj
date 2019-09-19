@@ -4,9 +4,9 @@
     <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
     <Authors>Oleg Shevchenko</Authors>
     <AssemblyName>SentryApi.Client</AssemblyName>
-    <Description>A Todoist API client for .NET</Description>
+    <Description>A Sentry API client for .NET</Description>
 
-    <Version>0.0.2</Version>
+    <Version>0.0.3</Version>
     
     <PackageId>Io.Sentry.Client</PackageId>
     <PackageTags>sentry</PackageTags>
