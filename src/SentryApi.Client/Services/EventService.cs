@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace SentryApi.Client
@@ -41,23 +42,25 @@ namespace SentryApi.Client
                 throw new ArgumentNullException(nameof(request));
             }
 
-            var queryString = $"projects/{request.OrganizationSlug}/{request.ProjectSlug}/issues/";
-            if (request.Period != null || !string.IsNullOrEmpty(request.QueryString))
-            {
-                queryString += "?";
-            }
+            string path = $"projects/{request.OrganizationSlug}/{request.ProjectSlug}/issues/";
 
+            var parameters = new List<string>();
             if (request.Period != null)
             {
-                queryString += $"statsPeriod={request.Period.ToQueryString()}";
+                parameters.Add($"statsPeriod={request.Period}");
             }
 
             if (!string.IsNullOrEmpty(request.QueryString))
             {
-                queryString += queryString;
+                parameters.Add($"query={request.QueryString}");
             }
 
-            return _sentryApiClient.GetPagedAsync<Issue>(queryString);
+            if (parameters.Count > 0)
+            {
+                path += $"?{string.Join("&", parameters)}";
+            }
+
+            return _sentryApiClient.GetPagedAsync<Issue>(path);
         }
     }
 }

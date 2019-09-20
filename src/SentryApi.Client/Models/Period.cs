@@ -1,35 +1,16 @@
-﻿using System;
-using System.ComponentModel;
-
-namespace SentryApi.Client
+﻿namespace SentryApi.Client
 {
-    public class Period
+    public class Period : StringEnum
     {
-        public Period(int amount, PeriodType type)
+        private Period(string value)
+            : base(value)
         {
-            if (!Enum.IsDefined(typeof(PeriodType), type))
-            {
-                throw new InvalidEnumArgumentException(nameof(type), (int)type, typeof(PeriodType));
-            }
-
-            if (amount <= 0)
-            {
-                throw new ArgumentOutOfRangeException(nameof(amount));
-            }
-
-            Amount = amount;
-            Type = type;
         }
 
-        public int Amount { get; }
+        public static Period All => new Period(string.Empty);
 
-        public PeriodType Type { get; }
+        public static Period Day => new Period("24h");
 
-        internal string ToQueryString()
-        {
-            var typeString = Type == PeriodType.Day ? "d" : "h";
-
-            return $"{Amount}{typeString}";
-        }
+        public static Period FourteenDays => new Period("14d");
     }
 }

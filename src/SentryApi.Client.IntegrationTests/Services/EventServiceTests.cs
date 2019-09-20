@@ -34,5 +34,16 @@ namespace SentryApi.Client.IntegrationTests.Services
 
             Assert.NotEmpty(issues.Collection);
         }
+
+        [Fact]
+        public async Task Get_issues_with_filter_doest_thrown_an_exception()
+        {
+            var client = SentryApiClientFactory.Create();
+
+            var projects = await client.Projects.GetAsync().ConfigureAwait(false);
+            var project = projects.Collection.First();
+            var issues = await client.Events.GetIssuesAsync(new IssuesRequest(project.Organization.Slug, project.Slug, "is:unresolved is:assigned", Period.Day))
+                             .ConfigureAwait(false);
+        }
     }
 }
