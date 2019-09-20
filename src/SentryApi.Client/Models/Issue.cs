@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 using Newtonsoft.Json;
 
@@ -6,8 +7,11 @@ namespace SentryApi.Client
 {
     public class Issue
     {
+        [JsonProperty("annotations")]
+        public List<string> Annotations { get; set; }
+
         [JsonProperty("assignedTo")]
-        public string AssignedTo { get; set; }
+        public Assignee AssignedTo { get; set; }
 
         [JsonProperty("count")]
         public string Count { get; set; }
