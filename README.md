@@ -1,6 +1,7 @@
 # Sentry API client
 
-![](https://github.com/olsh/sentry-api-client/workflows/CI/badge.svg)
+![CI](https://github.com/olsh/sentry-api-client/workflows/CI/badge.svg)
+![Nuget](https://img.shields.io/nuget/v/Io.Sentry.Client)
 
 
 This is a library for [Sentry web API](https://docs.sentry.io/api/), 
