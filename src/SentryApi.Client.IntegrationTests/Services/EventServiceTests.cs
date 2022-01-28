@@ -16,10 +16,10 @@ namespace SentryApi.Client.IntegrationTests.Services
 
             var projects = await client.Projects.GetAsync().ConfigureAwait(false);
             var project = projects.Collection.First();
-            var events = await client.Events.GetAsync(new SentryRequest(project.Organization.Slug, project.Slug))
-                             .ConfigureAwait(false);
+            var exception =
+                await Record.ExceptionAsync(async () => await client.Events.GetAsync(new SentryRequest(project.Organization.Slug, project.Slug)).ConfigureAwait(false));
 
-            Assert.NotEmpty(events.Collection);
+            Assert.Null(exception);
         }
 
         [Fact]
@@ -29,10 +29,10 @@ namespace SentryApi.Client.IntegrationTests.Services
 
             var projects = await client.Projects.GetAsync().ConfigureAwait(false);
             var project = projects.Collection.First();
-            var issues = await client.Events.GetIssuesAsync(new IssuesRequest(project.Organization.Slug, project.Slug))
-                             .ConfigureAwait(false);
+            var exception =
+                await Record.ExceptionAsync(async () => await client.Events.GetIssuesAsync(new IssuesRequest(project.Organization.Slug, project.Slug)).ConfigureAwait(false));
 
-            Assert.NotEmpty(issues.Collection);
+            Assert.Null(exception);
         }
 
         [Fact]
@@ -42,8 +42,10 @@ namespace SentryApi.Client.IntegrationTests.Services
 
             var projects = await client.Projects.GetAsync().ConfigureAwait(false);
             var project = projects.Collection.First();
-            var issues = await client.Events.GetIssuesAsync(new IssuesRequest(project.Organization.Slug, project.Slug, "is:unresolved is:assigned", Period.Day))
-                             .ConfigureAwait(false);
+            var exception =
+                await Record.ExceptionAsync(async () => await client.Events.GetIssuesAsync(new IssuesRequest(project.Organization.Slug, project.Slug, "is:unresolved is:assigned", Period.Day)).ConfigureAwait(false));
+
+            Assert.Null(exception);
         }
     }
 }
