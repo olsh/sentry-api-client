@@ -9,14 +9,14 @@ namespace SentryApi.Client
     {
         private readonly HttpClient _httpClient;
 
-        public SentryHttpClient(string token)
+        public SentryHttpClient(string token, HttpClient httpClient)
         {
             if (string.IsNullOrEmpty(token))
             {
                 throw new ArgumentException("Value cannot be null or empty.", nameof(token));
             }
 
-            _httpClient = new HttpClient { BaseAddress = new Uri("https://sentry.io/api/0/") };
+            _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
         }
 

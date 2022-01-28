@@ -13,13 +13,23 @@ namespace SentryApi.Client
         private readonly SentryHttpClient _sentryHttpClient;
 
         public SentryApiClient(string token)
+            : this(token, new HttpClient { BaseAddress = new Uri("https://sentry.io/api/0/") })
         {
+        }
+
+        public SentryApiClient(string token, HttpClient httpClient)
+        {
+            if (httpClient == null)
+            {
+                throw new ArgumentNullException(nameof(httpClient));
+            }
+
             if (string.IsNullOrEmpty(token))
             {
                 throw new ArgumentException("Value cannot be null or empty.", nameof(token));
             }
 
-            _sentryHttpClient = new SentryHttpClient(token);
+            _sentryHttpClient = new SentryHttpClient(token, httpClient);
 
             Projects = new ProjectService(this);
             Events = new EventService(this);

@@ -6,7 +6,7 @@
     <AssemblyName>SentryApi.Client</AssemblyName>
     <Description>A Sentry API client for .NET</Description>
 
-    <Version>0.0.5</Version>
+    <Version>0.0.6</Version>
     
     <PackageId>Io.Sentry.Client</PackageId>
     <PackageTags>sentry</PackageTags>
