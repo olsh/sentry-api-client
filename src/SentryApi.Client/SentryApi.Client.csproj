@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <Authors>Oleg Shevchenko</Authors>
     <AssemblyName>SentryApi.Client</AssemblyName>
     <Description>A Sentry API client for .NET</Description>
 
-    <Version>0.0.7</Version>
+    <Version>0.0.8</Version>
     
     <PackageId>Io.Sentry.Client</PackageId>
     <PackageTags>sentry</PackageTags>
@@ -21,10 +21,6 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
-    <Reference Include="System.Net.Http" />
   </ItemGroup>
 
   <ItemGroup>

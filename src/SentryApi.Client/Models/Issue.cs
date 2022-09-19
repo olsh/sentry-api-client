@@ -72,5 +72,8 @@ namespace SentryApi.Client
 
         [JsonProperty("userCount")]
         public long UserCount { get; set; }
+
+        [JsonProperty("stats")]
+        public Stats Stats { get; set; }
     }
 }

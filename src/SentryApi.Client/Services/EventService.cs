@@ -45,9 +45,9 @@ namespace SentryApi.Client
             string path = $"projects/{request.OrganizationSlug}/{request.ProjectSlug}/issues/";
 
             var parameters = new List<string>();
-            if (request.Period != null)
+            if (request.StatsPeriod != null)
             {
-                parameters.Add($"statsPeriod={request.Period}");
+                parameters.Add($"statsPeriod={request.StatsPeriod}");
             }
 
             if (!string.IsNullOrEmpty(request.QueryString))
