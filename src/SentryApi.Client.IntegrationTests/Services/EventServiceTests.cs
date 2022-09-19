@@ -43,7 +43,7 @@ namespace SentryApi.Client.IntegrationTests.Services
             var projects = await client.Projects.GetAsync().ConfigureAwait(false);
             var project = projects.Collection.First();
             var exception =
-                await Record.ExceptionAsync(async () => await client.Events.GetIssuesAsync(new IssuesRequest(project.Organization.Slug, project.Slug, "is:unresolved is:assigned", Period.Day)).ConfigureAwait(false));
+                await Record.ExceptionAsync(async () => await client.Events.GetIssuesAsync(new IssuesRequest(project.Organization.Slug, project.Slug, "is:unresolved is:assigned", StatsPeriod.Day)).ConfigureAwait(false));
 
             Assert.Null(exception);
         }
