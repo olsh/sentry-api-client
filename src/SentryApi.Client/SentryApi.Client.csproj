@@ -12,7 +12,7 @@
     <PackageTags>sentry</PackageTags>
     <PackageReleaseNotes>https://github.com/olsh/sentry-api-client/releases</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/olsh/sentry-api-client</PackageProjectUrl>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/olsh/sentry-api-client/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/olsh/sentry-api-client</RepositoryUrl>
 
