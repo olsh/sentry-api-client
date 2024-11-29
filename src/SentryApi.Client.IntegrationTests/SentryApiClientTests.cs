@@ -14,7 +14,7 @@ namespace SentryApi.Client.IntegrationTests
         {
             var client = SentryApiClientFactory.Create();
 
-            var collection = await client.Projects.GetAsync().ConfigureAwait(false);
+            var collection = await client.Projects.GetAsync();
             var nextPage = await client.LoadNextPageAsync(collection);
             var previousPage = await client.LoadPreviousPageAsync(nextPage);
 
