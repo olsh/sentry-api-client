@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Oleg Shevchenko</Authors>
     <AssemblyName>SentryApi.Client</AssemblyName>
     <Description>A Sentry API client for .NET</Description>
 
-    <Version>0.0.8</Version>
+    <Version>0.0.9</Version>
     
     <PackageId>Io.Sentry.Client</PackageId>
     <PackageTags>sentry</PackageTags>

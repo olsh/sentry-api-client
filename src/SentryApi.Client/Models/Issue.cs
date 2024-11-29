@@ -8,7 +8,7 @@ namespace SentryApi.Client
     public class Issue
     {
         [JsonProperty("annotations")]
-        public List<string> Annotations { get; set; }
+        public List<dynamic> Annotations { get; set; }
 
         [JsonProperty("assignedTo")]
         public Assignee AssignedTo { get; set; }
