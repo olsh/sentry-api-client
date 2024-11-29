@@ -6,7 +6,7 @@ jobs:
   build:
 
     runs-on: windows-latest
-    
+
     steps:
     - uses: actions/checkout@v1
     - name: Setup .NET Core
@@ -19,4 +19,9 @@ jobs:
       run: |
         dotnet build src/SentryApi.Client.sln --configuration Release
         dotnet test src/SentryApi.Client.UnitTests/SentryApi.Client.UnitTests.csproj --configuration Release
+    - name: Run integration tests
+      if: github.ref == 'refs/heads/master'
+      env:
+        sentry-token: ${{ secrets.sentry_token }}
+      run: |
         dotnet test src/SentryApi.Client.IntegrationTests/SentryApi.Client.IntegrationTests.csproj --configuration Release
